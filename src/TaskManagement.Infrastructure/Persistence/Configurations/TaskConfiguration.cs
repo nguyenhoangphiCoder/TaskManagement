@@ -24,15 +24,15 @@ public class TaskConfiguration : IEntityTypeConfiguration<Domain.Entities.Task>
         builder.Property(t => t.ParentTaskId)
             .IsRequired(false);
 
-        builder.OwnsOne(t => t.Code, code =>
-        {
-            code.Property(c => c.Value)
-                .HasColumnName("Code")
-                .IsRequired()
-                .HasMaxLength(50);
+        builder.Property(t => t.Code)
+            .HasConversion(
+                c => c.Value,
+                v => TaskCode.FromString(v))
+            .HasColumnName("Code")
+            .IsRequired()
+            .HasMaxLength(50);
 
-            code.HasIndex(c => c.Value);
-        });
+        builder.HasIndex(t => t.Code);
 
         builder.Property(t => t.Title)
             .IsRequired()

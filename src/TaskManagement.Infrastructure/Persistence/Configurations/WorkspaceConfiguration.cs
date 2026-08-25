@@ -23,15 +23,15 @@ public class WorkspaceConfiguration : IEntityTypeConfiguration<Workspace>
         builder.Property(w => w.Description)
             .HasMaxLength(1000);
 
-        builder.OwnsOne(w => w.Slug, slug =>
-        {
-            slug.Property(s => s.Value)
-                .HasColumnName("Slug")
-                .IsRequired()
-                .HasMaxLength(200);
+        builder.Property(w => w.Slug)
+            .HasConversion(
+                s => s.Value,
+                v => WorkspaceSlug.FromString(v))
+            .HasColumnName("Slug")
+            .IsRequired()
+            .HasMaxLength(200);
 
-            slug.HasIndex(s => s.Value);
-        });
+        builder.HasIndex(w => w.Slug);
 
         builder.Property(w => w.OwnerId)
             .IsRequired();

@@ -4,12 +4,14 @@ namespace TaskManagement.Domain.ValueObjects;
 
 public sealed class WorkspaceSlug : IEquatable<WorkspaceSlug>
 {
-    public string Value { get; private set; }
+    public string Value { get; private set; } = string.Empty;
 
-    private WorkspaceSlug(string value)
+    public WorkspaceSlug(string value)
     {
-        Value = value;
+        Value = value ?? string.Empty;
     }
+
+    private WorkspaceSlug() { }
 
     public static WorkspaceSlug Create(string name)
     {
@@ -23,10 +25,7 @@ public sealed class WorkspaceSlug : IEquatable<WorkspaceSlug>
     public static WorkspaceSlug FromString(string value)
     {
         if (string.IsNullOrWhiteSpace(value))
-            throw new ArgumentException("Slug cannot be empty", nameof(value));
-
-        if (!IsValidSlug(value))
-            throw new ArgumentException("Invalid slug format", nameof(value));
+            return new WorkspaceSlug(string.Empty);
 
         return new WorkspaceSlug(value);
     }
@@ -41,7 +40,7 @@ public sealed class WorkspaceSlug : IEquatable<WorkspaceSlug>
         return slug;
     }
 
-    private static bool IsValidSlug(string value)
+    public static bool IsValidSlug(string value)
     {
         return Regex.IsMatch(value, @"^[a-z0-9]+(?:-[a-z0-9]+)*$");
     }

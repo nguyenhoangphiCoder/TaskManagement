@@ -2,12 +2,14 @@ namespace TaskManagement.Domain.ValueObjects;
 
 public sealed class TaskCode : IEquatable<TaskCode>
 {
-    public string Value { get; private set; }
+    public string Value { get; private set; } = string.Empty;
 
-    private TaskCode(string value)
+    public TaskCode(string value)
     {
-        Value = value;
+        Value = value ?? string.Empty;
     }
+
+    private TaskCode() { }
 
     public static TaskCode Create(string projectCode, int sequence)
     {
@@ -23,7 +25,7 @@ public sealed class TaskCode : IEquatable<TaskCode>
     public static TaskCode FromString(string value)
     {
         if (string.IsNullOrWhiteSpace(value))
-            throw new ArgumentException("Task code cannot be empty", nameof(value));
+            return new TaskCode(string.Empty);
 
         return new TaskCode(value);
     }

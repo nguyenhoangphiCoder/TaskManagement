@@ -5,11 +5,13 @@ public sealed class DateTimeRange : IEquatable<DateTimeRange>
     public DateTime StartDate { get; private set; }
     public DateTime? EndDate { get; private set; }
 
-    private DateTimeRange(DateTime startDate, DateTime? endDate)
+    public DateTimeRange(DateTime startDate, DateTime? endDate)
     {
         StartDate = startDate;
         EndDate = endDate;
     }
+
+    private DateTimeRange() { }
 
     public static DateTimeRange Create(DateTime startDate, DateTime? endDate = null)
     {
