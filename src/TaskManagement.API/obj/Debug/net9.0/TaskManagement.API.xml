@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TaskManagement.API</name>
+    </assembly>
+    <members>
+        <member name="M:TaskManagement.API.Controllers.AuthController.Register(TaskManagement.Application.Features.Users.Commands.RegisterUser.RegisterUserCommand)">
+            <summary>
+            Register a new user
+            </summary>
+        </member>
+        <member name="M:TaskManagement.API.Controllers.AuthController.Login(TaskManagement.Application.Features.Users.Queries.Login.LoginQuery)">
+            <summary>
+            Login and get JWT token
+            </summary>
+        </member>
+        <member name="M:TaskManagement.API.Controllers.HealthController.Get">
+            <summary>
+            Health check endpoint
+            </summary>
+        </member>
+        <member name="M:TaskManagement.API.Controllers.HealthController.CheckDatabase">
+            <summary>
+            Database connectivity check
+            </summary>
+        </member>
+        <member name="M:TaskManagement.API.Controllers.ProjectsController.CreateProject(TaskManagement.Application.DTOs.Projects.CreateProjectDto)">
+            <summary>
+            Create a new project
+            </summary>
+        </member>
+        <member name="M:TaskManagement.API.Controllers.ProjectsController.UpdateProject(System.Guid,TaskManagement.Application.DTOs.Projects.UpdateProjectDto)">
+            <summary>
+            Update an existing project
+            </summary>
+        </member>
+        <member name="M:TaskManagement.API.Controllers.ProjectsController.DeleteProject(System.Guid)">
+            <summary>
+            Delete a project
+            </summary>
+        </member>
+        <member name="M:TaskManagement.API.Controllers.ProjectsController.GetProjectById(System.Guid)">
+            <summary>
+            Get project by ID
+            </summary>
+        </member>
+        <member name="M:TaskManagement.API.Controllers.ProjectsController.ListProjects(System.Guid,System.Int32,System.Int32)">
+            <summary>
+            List projects in a workspace
+            </summary>
+        </member>
+        <member name="M:TaskManagement.API.Controllers.TagsController.CreateTag(TaskManagement.Application.DTOs.Tags.CreateTagDto)">
+            <summary>
+            Create a new tag for a workspace
+            </summary>
+        </member>
+        <member name="M:TaskManagement.API.Controllers.TasksController.GetTasks(TaskManagement.Application.Features.Tasks.Queries.ListTasks.ListTasksQuery)">
+            <summary>
+            Get paginated list of tasks with filtering and sorting
+            </summary>
+        </member>
+        <member name="M:TaskManagement.API.Controllers.TasksController.GetTaskById(System.Guid)">
+            <summary>
+            Get task by ID with full details
+            </summary>
+        </member>
+        <member name="M:TaskManagement.API.Controllers.TasksController.CreateTask(TaskManagement.Application.DTOs.Tasks.CreateTaskDto)">
+            <summary>
+            Create a new task
+            </summary>
+        </member>
+        <member name="M:TaskManagement.API.Controllers.TasksController.GetTasksByProject(System.Guid,System.Int32,System.Int32)">
+            <summary>
+            Get tasks by project
+            </summary>
+        </member>
+        <member name="M:TaskManagement.API.Controllers.TasksController.GetOverdueTasks(System.Int32,System.Int32)">
+            <summary>
+            Get overdue tasks
+            </summary>
+        </member>
+        <member name="M:TaskManagement.API.Controllers.TasksController.UpdateTask(System.Guid,TaskManagement.Application.DTOs.Tasks.UpdateTaskDto)">
+            <summary>
+            Update an existing task
+            </summary>
+        </member>
+        <member name="M:TaskManagement.API.Controllers.TasksController.DeleteTask(System.Guid)">
+            <summary>
+            Delete a task
+            </summary>
+        </member>
+        <member name="M:TaskManagement.API.Controllers.TasksController.ChangeTaskStatus(System.Guid,System.Guid)">
+            <summary>
+            Change task status
+            </summary>
+        </member>
+        <member name="M:TaskManagement.API.Controllers.TasksController.AddComment(System.Guid,TaskManagement.Application.DTOs.Tasks.CreateTaskCommentDto)">
+            <summary>
+            Add a comment to a task
+            </summary>
+        </member>
+        <member name="M:TaskManagement.API.Controllers.TasksController.GetTaskComments(System.Guid)">
+            <summary>
+            Get comments for a task
+            </summary>
+        </member>
+        <member name="M:TaskManagement.API.Controllers.TasksController.DeleteComment(System.Guid,System.Guid)">
+            <summary>
+            Delete a comment from a task
+            </summary>
+        </member>
+        <member name="M:TaskManagement.API.Controllers.TasksController.AddChecklist(System.Guid,TaskManagement.Application.DTOs.Tasks.CreateTaskChecklistDto)">
+            <summary>
+            Add a checklist to a task
+            </summary>
+        </member>
+        <member name="M:TaskManagement.API.Controllers.TasksController.ToggleChecklist(System.Guid,System.Guid)">
+            <summary>
+            Toggle a checklist item completion status
+            </summary>
+        </member>
+        <member name="M:TaskManagement.API.Controllers.TasksController.AddTagToTask(System.Guid,System.Guid)">
+            <summary>
+            Add a tag to a task
+            </summary>
+        </member>
+        <member name="M:TaskManagement.API.Controllers.TasksController.AssignTask(System.Guid,System.Guid)">
+            <summary>
+            Assign a member to a task
+            </summary>
+        </member>
+        <member name="M:TaskManagement.API.Controllers.TasksController.UnassignTask(System.Guid,System.Guid)">
+            <summary>
+            Remove a member from a task
+            </summary>
+        </member>
+        <member name="M:TaskManagement.API.Controllers.UsersController.GetUsers(System.String)">
+            <summary>
+            Get all users in the tenant
+            </summary>
+        </member>
+        <member name="M:TaskManagement.API.Controllers.UsersController.GetCurrentUser">
+            <summary>
+            Get current user profile
+            </summary>
+        </member>
+        <member name="M:TaskManagement.API.Controllers.WorkspacesController.GetUserWorkspaces">
+            <summary>
+            Get all workspaces the current user is a member of
+            </summary>
+        </member>
+        <member name="M:TaskManagement.API.Controllers.WorkspacesController.GetWorkspaceById(System.Guid)">
+            <summary>
+            Get workspace by ID
+            </summary>
+        </member>
+        <member name="M:TaskManagement.API.Controllers.WorkspacesController.GetWorkspaceStatuses(System.Guid)">
+            <summary>
+            Get all task statuses in a workspace
+            </summary>
+        </member>
+        <member name="M:TaskManagement.API.Controllers.WorkspacesController.GetWorkspaceMembers(System.Guid)">
+            <summary>
+            Get all members in a workspace
+            </summary>
+        </member>
+        <member name="M:TaskManagement.API.Controllers.WorkspacesController.CreateWorkspace(TaskManagement.Application.DTOs.Workspaces.CreateWorkspaceDto)">
+            <summary>
+            Create a new workspace
+            </summary>
+        </member>
+        <member name="M:TaskManagement.API.Controllers.WorkspacesController.UpdateWorkspace(System.Guid,TaskManagement.Application.DTOs.Workspaces.UpdateWorkspaceDto)">
+            <summary>
+            Update an existing workspace
+            </summary>
+        </member>
+        <member name="M:TaskManagement.API.Controllers.WorkspacesController.ArchiveWorkspace(System.Guid)">
+            <summary>
+            Archive a workspace
+            </summary>
+        </member>
+        <member name="M:TaskManagement.API.Controllers.WorkspacesController.InviteMember(System.Guid,System.Guid,TaskManagement.Domain.Enums.MemberRole)">
+            <summary>
+            Invite a member to the workspace
+            </summary>
+        </member>
+        <member name="M:TaskManagement.API.Controllers.WorkspacesController.RemoveMember(System.Guid,System.Guid)">
+            <summary>
+            Remove a member from the workspace
+            </summary>
+        </member>
+    </members>
+</doc>
